@@ -47,8 +47,13 @@ define( [
 			PhotoFit.featureCollection.reset( options.config.items );
 			// Add a live event for removing the selected features from the photo
 			this.el.find( '#picks' ).on( 'dblclick', function ( e ) { self.unpickStyle( e ); } );
-			// Download button
-			this.el.find( '#download-btn' ).on( 'click', function ( e ) { self.readyImageForDownload( e ); } );
+			// Create image button
+			this.el.find( '#create' ).on( 'click', function ( e ) { 
+				e.preventDefault();
+				if ( !$( this ).hasClass( 'disabled' ) ) {
+					self.readyImageForDownload( e ); 
+				}
+			} );
 		},	
 
 		// Loop over our feature collection and create the 'nav' and the photo sections
@@ -207,7 +212,7 @@ define( [
 		// Checks to see if we have a full picture for downloading
 		checkStatus : function () {
 			var size = _.size( this.config.picks ),
-				btn = this.el.find( '#download-btn' );
+				btn = this.el.find( '#create' );
 			btn[ size < 6 ? 'addClass' : 'removeClass' ]( 'disabled' );
 		},
 
@@ -225,7 +230,7 @@ define( [
 							self.getDownloadImage( canvas );
 						}
 						// Store the current image config so we don't re-create it uneccessarily
-						self.config.createdImageConfig = self.config.picks;
+						self.config.createdImageConfig = _.clone( self.config.picks );
 					}
 				// Found that the order of the images wasn't always correct, so creating an array (which, of course, is properly indexed)
 				// of our passed headings, then using that to access the correct keys in the config.picks object
@@ -246,19 +251,43 @@ define( [
       		} 
 		},
 
-		// Creates the download image
+		// Creates the download image data
 		getDownloadImage : function ( photo, data ) {
 			var canvasData;
-			if ( !data ) {
-				canvasData = photo.toDataURL( {
-	  				mimeType: 'image/png'
-				} );
-			} else {
-				canvasData = data;
+			try {
+				if ( !data ) {
+					canvasData = photo.toDataURL( {
+		  				mimeType: 'image/png;base64'
+					} );
+				} else {
+					canvasData = data;
+				}
+				this.createDownloadBtn( canvasData );
+			} catch( e ) {
+				this.showDownloadIssue( true );
 			}
 			this.config.createdImageConfigData = canvasData;
-			// TODO - Download
-			window.open( canvasData );
+		},
+
+		// Create the download button
+		createDownloadBtn : function ( canvasData ) {
+			var a = $( '<a>' ).attr( 'href', canvasData ).attr( 'download', 'photo.png' ).attr( 'id', 'download' ).addClass( 'btn btn-large btn-block btn-danger' ).text( 'Download' );
+			a.on( 'click', function ( e ) {
+				a.off( 'click' ).remove();
+			} );
+			a.insertAfter( this.el.find( '#create' ) );
+		},
+
+		// Shows an error if we can't create the download
+		showDownloadIssue : function ( state ) {
+			if ( state ) {
+				$( '<p>' ).attr( 'id', 'download-error' ).text( 'Sorry, we\'re unable to create your download image. Perhaps you\'re viewing this page locally on your file system?' ).insertAfter( this.el.find( '#create' ) );
+			} else {
+				var p = this.el.find( 'p#download-error' );
+				if ( p.length !== 0 ) {
+					p.remove();
+				}
+			}
 		}
 
 	} );

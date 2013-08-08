@@ -110,6 +110,13 @@ canvas#photo {
 	top: -9999em;
 }
 
+#photofit-app p#download-error {
+	margin: 10px;
+	color: #c00;
+	background-color: #ffff99;
+	padding: 4px;
+}
+
 #photofit-app footer {
 	clear: both;
 	background-color: transparent;

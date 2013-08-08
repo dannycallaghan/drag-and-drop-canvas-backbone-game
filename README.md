@@ -16,12 +16,12 @@ Viewing the (results of the) test locally
 1.  Clone the repo, or download and extract the zip.
 2.  Navigate to dist/ and open index.html in your browser of choice*.
 
-* Note that, due to the security restrictions of canvas.toDataURL, the download functionality will not work from the file system (viewing the app as file://...), and will need to be placed in a local HTTP server.
+*Note that, due to the security restrictions of canvas.toDataURL, the download functionality will not work from the file system (viewing the app as file://...), and will need to be placed in a local HTTP server. It'll fail gracefully, and everything else will work, but just to be aware.
 
 Interpreting the brief
 ----------------------
 
-Due to the complexity of creating images for a 'real' Police like PhotoFit, and the mention of 'cartoon' in the brief, I've creating something resembling more of a PhotoFit *game*. I hope this is OK.
+Due to the complexity of creating images for a 'real' Police like PhotoFit, and the mention of 'cartoon' in the brief, I've creating something resembling more of a PhotoFit *game*. I hope this is OK. It also meant that my 3 year old daughter did some testing, and usually you have to pay for QA people :)
 
 Chosen Technologies
 ------------
@@ -32,11 +32,11 @@ I've used Require.JS to load the JavaScript, as I believe - for most things - AM
 
 I've used Backbone mainly to look after the views. I find it the easiest way of injecting and administering chunks of HTML (views).
 
-I've used jQuery because I'm very familiar with it, and I'm doing a fair bit of DOM work. I'm using Underscore.js alongside this as it's brilliant and it a dependency of Backbone anyway.
+I've used jQuery because I'm very familiar with it, and I'm doing a fair bit of DOM work. I'm using Underscore.js alongside this as it's brilliant and it's a dependency of Backbone anyway.
 
-I've used #################
+I've used ThreeDubMedia's jquery.event ([http://threedubmedia.com/code/event/drag](http://threedubmedia.com/code/event/drag "ThreeDubMedia")) patch for the dragging and dropping. Adds a little more functionality to what's available out of the box with jQuery. This just came up after a Google, never used it before.
 
-I've used HTML5's Canvas API to create the image at the end.
+I've used HTML5's Canvas API to create the image at the end. There is a dusting of HTML5 tags and attributes used in the markup.
 
 Responsive
 ----------
