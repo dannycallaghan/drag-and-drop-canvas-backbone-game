@@ -47,4 +47,3 @@ Browsers
 -------------------
 
 As there was no mention of browsers in the brief, I've built this to work with the latest versions.
-
