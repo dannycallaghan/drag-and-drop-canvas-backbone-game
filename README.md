@@ -15,6 +15,7 @@ Viewing the (results of the) test locally
 
 1.  Clone the repo, or download and extract the zip.
 2.  Navigate to dist/ and open index.html in your browser of choice*.
+3.	Alternatively, run 'grunt --force' (excuse the mixed tabs and spaces warnings!) in the root of the project to create a new build and open the very latest dist/index.html.
 
 *Note that, due to the security restrictions of canvas.toDataURL, the download functionality will not work from the file system (viewing the app as file://...), and will need to be placed in a local HTTP server. It'll fail gracefully, and everything else will work, but just to be aware.
 
