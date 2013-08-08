@@ -214,6 +214,11 @@ define( [
 			var size = _.size( this.config.picks ),
 				btn = this.el.find( '#create' );
 			btn[ size < 6 ? 'addClass' : 'removeClass' ]( 'disabled' );
+			if ( size < 6 ) {
+				if ( this.el.find( 'a#download' ).length !== 0 ) {
+					this.el.find( 'a#download' ).off( 'click' ).remove();
+				}
+			}
 		},
 
 		// Prepares image for downloading
