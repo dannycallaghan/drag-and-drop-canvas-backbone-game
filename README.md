@@ -38,6 +38,8 @@ I've used ThreeDubMedia's jquery.event ([http://threedubmedia.com/code/event/dra
 
 I've used HTML5's Canvas API to create the image at the end. There is a dusting of HTML5 tags and attributes used in the markup.
 
+For the UI, I included Bootstrap (nee Twitter Bootstrap) as I'm a big fan, and it makes rapid prototyping much easier (and nicer to look at). I also came across ([http://designmodo.github.io/Flat-UI/](Flat UI "Flat UI")) last week and - as I'm a sucker for trends, in this case flat design - I used that too (it sits on top of Bootstrap, almost as a theme).
+
 Responsive
 ----------
 
