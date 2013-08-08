@@ -1,0 +1,75 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>DM Tech Test</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,700italic,900,400italic,300" rel="stylesheet" type="text/css"> -->
+	<link rel="stylesheet" href="styles/vendor/e4734535.bootstrap.css">
+	<link rel="stylesheet" href="styles/vendor/dbd41ef8.flat-ui.css">
+	<link rel="stylesheet" href="styles/5347926d.main.css">
+</head>
+<body>
+
+	<div id="photofit-app">
+
+		<header>
+			<h1>PhotoFit Tool</h1>
+		</header>
+
+		<div class="row">
+
+			<section class="tile">
+
+				<h2>Features</h2>
+
+				<p>Select a face feature to view styles.</p>
+
+				<nav></nav>
+
+			</section>
+
+			<section class="tile">
+
+				<h2>Hair</h2>
+
+				<p>Drag your chosen style to the photo (Pssst, you don't need to remove one style before dragging an alternative style onto the image).</p>
+
+				<div id="choices"></div>
+
+			</section>
+
+			<section class="tile">
+		
+				<h2>Photo</h2>
+
+				<p>Doubleclick a feature to remove it. When you're happy, click <i>Download</i> to save your image.</p>
+
+				<div id="picks"></div>
+
+				<a href="#" id="download-btn" class="btn btn-large btn-block btn-success">Download</a>
+
+				<canvas id="photo" width="376" height="540"></canvas>
+		
+			</section>
+
+		</div>
+
+		<footer>
+		
+			<p>&copy; Danny Callaghan 2013. UI elements (very quickly) taken from designmodo's <a href="http://designmodo.github.io/Flat-UI/">Flat UI</a>.</p>
+	
+		</footer>
+
+	</div>
+	
+	<canvas id="photo" width="376" height="540"></canvas>
+
+	<script data-main="scripts/a7ca92be.main" src="bower_components/requirejs/require.js"></script>
+</body>
+</html>
