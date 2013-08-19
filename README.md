@@ -1,14 +1,16 @@
-DM Tech Test
+drag-and-drop-canvas-backbone-game
 ============
 
-A repo for a technical test that I've just completed, for a client who will remain anonymous.
+Catchy name, huh?
+
+This was originally a technical test I did for a prospective client. The brief was simply to create a drag and drop 'photofit' type app. Bonus points were given if you could make it responsive (I did), using a mv(c) JavaScript framework (I did), and allow the completed face to be downloaded (it does).
 
 Viewing the (results of the) test
 ---------------------------------
 
 Navigate to the following GitHub Page in your browser of choice:
 
-[http://dannycallaghan.github.io/dmtechtest/](http://dannycallaghan.github.io/dmtechtest/ "DM Tech Test")
+[http://dannycallaghan.github.io/drag-and-drop-canvas-backbone-game/](http://dannycallaghan.github.io/drag-and-drop-canvas-backbone-game/ "drag-and-drop-canvas-backbone-game")
 
 Viewing the (results of the) test locally
 -----------------------------------------
